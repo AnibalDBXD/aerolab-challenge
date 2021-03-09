@@ -1,8 +1,9 @@
 import { IProduct } from "../interfaces";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const API_URL = "https://coding-challenge-api.aerolab.co";
+
 export async function GetProductList(): Promise<IProduct[] | undefined> {
-    const ProductResponse = await fetch(`${process.env.API_URL}/products`, {
+    const ProductResponse = await fetch(`${API_URL}/products`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -16,5 +17,6 @@ export async function GetProductList(): Promise<IProduct[] | undefined> {
     if (!ProductData) {
         return undefined;
     }
+
     return ProductData;
 }

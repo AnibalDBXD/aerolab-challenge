@@ -1,11 +1,14 @@
 import { StyledProductList } from "./styles";
 import Product from "../Product";
-import { IProductList } from "./types";
+import { useContext } from "react";
+import ProductContext from "../../../context/Product/ProductContext";
 
-const ProductList: React.FC<IProductList> = ({ productList }: IProductList): JSX.Element => {
+const ProductList: React.FC = (): JSX.Element => {
+    const { currentProducts } = useContext(ProductContext);
+
     return (
         <StyledProductList>
-            {productList.map(({ _id, category, cost, img, name }) => (
+            {currentProducts.map(({ _id, category, cost, img, name }) => (
                 <Product category={category} cost={cost} img_src={img?.hdUrl} key={_id} name={name} />
             ))}
         </StyledProductList>
