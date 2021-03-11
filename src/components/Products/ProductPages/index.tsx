@@ -1,15 +1,14 @@
-import { TProductPages } from "./types";
+import { IProductPages } from "./types";
 import { Text } from "../../Text";
 import { StyledButtonContainer, StyledButton, StyledVerticalBar } from "./styles";
 import { ArrowLeft, ArrowRight } from "../../Icons";
 import { StyledInfoPages } from "./styles";
-import ProductContext from "../../../context/Product/ProductContext";
-import { IProductState } from "../../../context/types";
-import { useContext, useEffect, useState } from "react";
+import { useProductContext } from "../../../context/Product/ProductContext";
+import { useEffect, useState } from "react";
 import { PRODUCT_PER_PAGE, INITIAL_PAGE } from "./constants";
 
-const ProductPages: React.FC<TProductPages> = ({ children, VerticalBar }: TProductPages): JSX.Element => {
-    const { allProducts, SetCurrentProducts, currentSort } = useContext<IProductState>(ProductContext);
+const ProductPages: React.FC<IProductPages> = ({ children, VerticalBar }: IProductPages): JSX.Element => {
+    const { allProducts, SetCurrentProducts, currentSort } = useProductContext();
 
     const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
     const [CanLeft, setCanLeft] = useState(false);

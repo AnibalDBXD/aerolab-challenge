@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { RightTop } from "../styles";
-import { Colors, FontSize, LetterSpacing, borderRadius } from "../../../../common/styles";
+import { Colors, FontSize, LetterSpacing, borderRadius } from "../../../../../common/styles";
 
 export const StyledNotEnoughMoney = styled.p`
     ${RightTop};

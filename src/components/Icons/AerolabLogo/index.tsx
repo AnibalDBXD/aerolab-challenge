@@ -1,6 +1,6 @@
-import { TIcon } from "../types";
+import { IICon } from "../types";
 
-const AerolabLogo: React.FC<TIcon> = ({ size, height = "39px", width = "36px", style }: TIcon): JSX.Element => (
+const AerolabLogo: React.FC<IICon> = ({ size, height = "39px", width = "36px", style }: IICon): JSX.Element => (
     <svg height={size || height} style={style} version="1.1" viewBox="0 0 39 36" width={size || width} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <title>logo</title>
         <desc>Created with Sketch.</desc>

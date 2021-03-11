@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Colors, FontSize, LetterSpacing, borderRadius } from "../../../../common/styles";
-import { BuyWhite } from "../../../Icons";
+import { Colors, FontSize, LetterSpacing, borderRadius } from "../../../../../common/styles";
+import { BuyWhite } from "../../../../Icons";
 import { RightTop } from "../styles";
 import { StyledProductContainer } from "../styles";
 

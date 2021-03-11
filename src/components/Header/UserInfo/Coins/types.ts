@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface TCoins {
+export interface ICoins {
     children: ReactNode;
 }

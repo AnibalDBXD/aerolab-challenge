@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import { Colors, FontSize, LetterSpacing } from "../../../common/styles";
-import { BuyBlue } from "../../Icons";
+import { Colors, FontSize, LetterSpacing } from "../../../../common/styles";
+import { BuyBlue } from "../../../Icons";
 
 export const StyledProductContainer = styled.div`
     background-color: ${Colors.white};

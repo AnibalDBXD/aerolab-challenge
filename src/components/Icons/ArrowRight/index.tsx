@@ -1,6 +1,6 @@
-import { TIcon } from "../types";
+import { IICon } from "../types";
 
-const ArrowRight: React.FC<TIcon> = ({ height = "48px", width = "48px", size, style }: TIcon): JSX.Element => (
+const ArrowRight: React.FC<IICon> = ({ height = "48px", width = "48px", size, style }: IICon): JSX.Element => (
     <svg height={size || height} style={style} version="1.1" viewBox="0 0 48 48" width={size || width} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <title>arrow-up</title>
         <desc>Created with Sketch.</desc>

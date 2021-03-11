@@ -1,8 +1,8 @@
 import { StyledBuyScreen, StyledPrice, StyledContainer, StyledButtonPrice, StyledBuyIcon } from "./styles";
-import { Coin } from "../../../Icons";
+import { Coin } from "../../../../Icons";
 import { IBuyScreen } from "./types";
 
-const BuyScreen: React.FC<IBuyScreen> = ({ price }: IBuyScreen): JSX.Element => {
+const BuyScreen: React.FC<IBuyScreen> = ({ price, handleRedeem }: IBuyScreen): JSX.Element => {
     return (
         <StyledBuyScreen>
             <StyledBuyIcon />
@@ -10,7 +10,7 @@ const BuyScreen: React.FC<IBuyScreen> = ({ price }: IBuyScreen): JSX.Element => 
                 <StyledPrice>
                     {price} <Coin size="26px" />
                 </StyledPrice>
-                <StyledButtonPrice>Redeem now</StyledButtonPrice>
+                <StyledButtonPrice onClick={handleRedeem}>Redeem now</StyledButtonPrice>
             </StyledContainer>
         </StyledBuyScreen>
     );

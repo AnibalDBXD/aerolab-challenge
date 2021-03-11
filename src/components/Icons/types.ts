@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export interface TIcon {
+export interface IICon {
     size?: string;
     width?: string;
     height?: string;

@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useReducer } from "react";
-import ProductContext from "./ProductContext";
 import { GetProductList } from "../../api";
-import { initialState } from "./ProductContext";
+import { initialState, ProductContext } from "./ProductContext";
 import ProductReducer from "./ProductReducer";
 import ProductActions from "./ProductActions";
 import { IProduct } from "../../interfaces";
@@ -17,8 +16,8 @@ const ProductProvider = ({ children }: IProps): JSX.Element => {
     useEffect((): void => {
         GetProductList().then((products) => {
             if (products) {
-                SetDefaultProducts(products);
-                SetAllProducts(products);
+                SetDefaultProducts(products as IProduct[]);
+                SetAllProducts(products as IProduct[]);
             }
         });
     }, []);

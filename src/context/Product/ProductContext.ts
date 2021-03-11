@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { IProductState } from "../types";
 
 export const initialState: IProductState = {
@@ -8,6 +8,6 @@ export const initialState: IProductState = {
     currentSort: "MostRecent"
 };
 
-const ProductContext = createContext<IProductState>(initialState);
+export const ProductContext = createContext<IProductState>(initialState);
 
-export default ProductContext;
+export const useProductContext = (): IProductState => useContext(ProductContext);

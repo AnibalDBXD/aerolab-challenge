@@ -1,6 +1,6 @@
-import { TIcon } from "../types";
+import { IICon } from "../types";
 
-const BuyWhite: React.FC<TIcon> = ({ size, height = "50px", width = "50px", style, className }: TIcon): JSX.Element => (
+const BuyWhite: React.FC<IICon> = ({ size, height = "50px", width = "50px", style, className }: IICon): JSX.Element => (
     <svg
         className={className}
         height={size || height}

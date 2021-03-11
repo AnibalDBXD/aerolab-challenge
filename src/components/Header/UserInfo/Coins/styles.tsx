@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Colors, borderRadius } from "../../../common/styles";
-import { Text } from "../../Text";
+import { Colors, borderRadius } from "../../../../common/styles";
+import { Text } from "../../../Text";
 
 export const StyledCoins = styled(Text)`
     background-color: ${Colors.gray};
@@ -13,4 +13,5 @@ export const StyledCoins = styled(Text)`
     padding-bottom: 5px;
     border-radius: ${borderRadius};
     line-height: 0;
+    cursor: pointer;
 `;

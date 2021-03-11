@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import { ISorts } from "../components/Products/ProductSort/types";
-import { IProduct } from "../interfaces";
+import { IProduct, IRedeemHistory } from "../interfaces";
 import ProductActions from "./Product/ProductActions";
+import UserActions from "./User/UserActions";
 
 export interface IState {
     children: ReactNode;
@@ -18,13 +19,20 @@ export interface IProductState {
 }
 
 export interface IUserState {
-    user: {
-        name: string;
-        coins: number;
-    };
+    _id: string;
+    name: string;
+    points: number;
+    redeemHistory: IRedeemHistory[];
+    createDate: Date;
+    SetPoints?: (newPoints: number) => void;
 }
 
-export interface IActions {
+export interface IProductActions {
     type: ProductActions;
     payload: IProduct[] | ISorts;
+}
+
+export interface IUserActions {
+    type: UserActions;
+    payload: IUserState | number;
 }

@@ -1,15 +1,12 @@
 import { StyledHeader } from "./styles";
 import { AerolabLogo } from "../Icons";
-import UserInfo from "../UserInfo";
-import { THeader } from "./types";
+import UserInfo from "./UserInfo";
 
-const Header: React.FC<THeader> = ({ name, coin }: THeader): JSX.Element => {
-    return (
-        <StyledHeader>
-            <AerolabLogo />
-            <UserInfo coin={coin} name={name} />
-        </StyledHeader>
-    );
-};
+const Header: React.FC = (): JSX.Element => (
+    <StyledHeader>
+        <AerolabLogo />
+        <UserInfo />
+    </StyledHeader>
+);
 
 export default Header;
