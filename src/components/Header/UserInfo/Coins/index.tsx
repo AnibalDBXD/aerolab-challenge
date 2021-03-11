@@ -1,16 +1,21 @@
 import { ICoins } from "./types";
-import { StyledCoins } from "./styles";
+import { StyledCoins, StyledPopup } from "./styles";
 import { BuyCoins } from "../../../Icons";
 import AddCoins from "./AddCoins";
 
 const Coins: React.FC<ICoins> = ({ children }: ICoins): JSX.Element => {
     return (
-        <>
-            <AddCoins />
-            <StyledCoins>
-                {children} <BuyCoins size="24px" />
-            </StyledCoins>
-        </>
+        <StyledPopup
+            closeOnDocumentClick
+            closeOnEscape
+            modal
+            trigger={
+                <StyledCoins>
+                    {children} <BuyCoins size="24px" />
+                </StyledCoins>
+            }>
+            {(close: () => void): JSX.Element => <AddCoins closeModal={close} />}
+        </StyledPopup>
     );
 };
 

@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { Colors, borderRadius } from "../../../../common/styles";
 import { Text } from "../../../Text";
+import Popup from "reactjs-popup";
+
+export const StyledPopup = styled(Popup)`
+    &-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
 
 export const StyledCoins = styled(Text)`
     background-color: ${Colors.gray};
