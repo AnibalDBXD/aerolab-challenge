@@ -14,15 +14,20 @@ const UserProvider = ({ children }: IProps): JSX.Element => {
     const [state, dispatch] = useReducer(UserReducer, initialState);
 
     useEffect(() => {
-        GetUser().then((newUser) => SetUser(newUser as IUser));
+        GetUser().then((newUser) => {
+            SetUser(newUser as IUser);
+            SetLoading(false);
+        });
     }, []);
+
+    const SetLoading = (isLoading: boolean): void => dispatch({ type: UserActions.SET_LOADING, payload: isLoading });
 
     const SetUser = (newUser: IUser): void => dispatch({ type: UserActions.SET_USER, payload: newUser as IUserState });
 
     const SetPoints = (newPoints: number): void => dispatch({ type: UserActions.SET_POINTS, payload: newPoints });
 
     return (
-        <UserContext.Provider value={{ _id: state._id, createDate: state.createDate, name: state.name, points: state.points, redeemHistory: state.redeemHistory, SetPoints }}>
+        <UserContext.Provider value={{ loading: state.loading, _id: state._id, createDate: state.createDate, name: state.name, points: state.points, redeemHistory: state.redeemHistory, SetPoints }}>
             {children}
         </UserContext.Provider>
     );

@@ -18,9 +18,14 @@ const ProductProvider = ({ children }: IProps): JSX.Element => {
             if (products) {
                 SetDefaultProducts(products as IProduct[]);
                 SetAllProducts(products as IProduct[]);
+                SetLoading(false);
             }
         });
     }, []);
+
+    const SetLoading = (isLoading: boolean): void => {
+        dispatch({ type: ProductActions.SET_LOADING, payload: isLoading });
+    };
 
     const SetDefaultProducts = (newProducts: IProduct[]): void => {
         dispatch({ type: ProductActions.SET_DEFAULT_PRODUCT, payload: newProducts });
@@ -41,6 +46,7 @@ const ProductProvider = ({ children }: IProps): JSX.Element => {
     return (
         <ProductContext.Provider
             value={{
+                loading: state.loading,
                 defaultProducts: state.defaultProducts,
                 SetAllProducts,
                 allProducts: state.allProducts,

@@ -1,13 +1,18 @@
 import { IUserActions, IUserState } from "./../types";
-import ProductActions from "./UserActions";
+import UserActions from "./UserActions";
 
 const UserReducer = (state: IUserState, action: IUserActions): IUserState => {
     const { payload, type } = action;
     switch (type) {
-        case ProductActions.SET_USER:
+        case UserActions.SET_LOADING:
+            return {
+                ...state,
+                loading: payload as boolean
+            };
+        case UserActions.SET_USER:
             return payload as IUserState;
 
-        case ProductActions.SET_POINTS:
+        case UserActions.SET_POINTS:
             return {
                 ...state,
                 points: payload as number

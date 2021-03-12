@@ -5,7 +5,8 @@ export const initialState: IProductState = {
     allProducts: [],
     currentProducts: [],
     defaultProducts: [],
-    currentSort: "MostRecent"
+    currentSort: "MostRecent",
+    loading: true
 };
 
 export const ProductContext = createContext<IProductState>(initialState);

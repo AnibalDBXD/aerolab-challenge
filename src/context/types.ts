@@ -9,6 +9,7 @@ export interface IState {
 }
 
 export interface IProductState {
+    loading: boolean;
     allProducts: IProduct[];
     currentProducts: IProduct[];
     defaultProducts: IProduct[];
@@ -19,6 +20,7 @@ export interface IProductState {
 }
 
 export interface IUserState {
+    loading: boolean;
     _id: string;
     name: string;
     points: number;
@@ -29,10 +31,10 @@ export interface IUserState {
 
 export interface IProductActions {
     type: ProductActions;
-    payload: IProduct[] | ISorts;
+    payload: IProduct[] | ISorts | boolean;
 }
 
 export interface IUserActions {
     type: UserActions;
-    payload: IUserState | number;
+    payload: IUserState | number | boolean;
 }

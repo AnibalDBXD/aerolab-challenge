@@ -6,7 +6,7 @@ import UserProvider from "../context/User/UserProvider";
 const Home: React.FC = (): JSX.Element => {
     return (
         <UserProvider>
-            <Header coin={6000} name="John Kite" />
+            <Header />
             <Cover>Electronics</Cover>
             <Products />
         </UserProvider>

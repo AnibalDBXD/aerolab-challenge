@@ -8,6 +8,11 @@ const ProductReducer = (state: IProductState, action: IProductActions): IProduct
     const { payload, type } = action;
 
     switch (type) {
+        case ProductActions.SET_LOADING:
+            return {
+                ...state,
+                loading: payload as boolean
+            };
         case ProductActions.SET_DEFAULT_PRODUCT:
             return {
                 ...state,

@@ -6,7 +6,8 @@ export const initialState: IUserState = {
     name: "",
     points: 0,
     redeemHistory: [],
-    createDate: new Date()
+    createDate: new Date(),
+    loading: true
 };
 
 export const UserContext = createContext(initialState);

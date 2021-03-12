@@ -4,7 +4,9 @@ import UserInfo from "./UserInfo";
 
 const Header: React.FC = (): JSX.Element => (
     <StyledHeader>
-        <AerolabLogo />
+        <a href="https://github.com/AnibalDBXD/aerolab-challenge" rel="noreferrer" target="_blank">
+            <AerolabLogo />
+        </a>
         <UserInfo />
     </StyledHeader>
 );
