@@ -16,11 +16,11 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledVerticalBar = styled.div`
-    border-left: 1px solid ${Colors.lightslateGray};
+    border-left: 1px solid ${Colors.lightSlateGray};
     height: 49px;
 `;
 
 export const StyledInfoPages = styled(StyledList)`
-    border-bottom: 1px solid ${Colors.lightslateGray};
+    border-bottom: 1px solid ${Colors.lightSlateGray};
     padding-bottom: ${Spacing};
 `;

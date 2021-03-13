@@ -1,5 +1,5 @@
-import { IProductActions } from "./../types";
-import { IProductState } from "../types";
+import { IProductActions } from "./types";
+import { IProductState } from "./types";
 import ProductActions from "./ProductActions";
 import { IProduct } from "../../interfaces";
 import { ISorts } from "../../components/Products/ProductSort/types";

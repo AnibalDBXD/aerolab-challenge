@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { IProductState } from "../types";
+import { IProductState } from "./types";
 
 export const initialState: IProductState = {
     allProducts: [],

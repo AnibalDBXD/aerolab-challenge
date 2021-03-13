@@ -1,13 +1,13 @@
 export enum Colors {
     white = "#ffffff",
-    lightslateGray = "#d9d9d9",
+    lightSlateGray = "#d9d9d9",
     lightGray = "#f9f9f9",
     gray = "#ededed",
     slateGray = "#a3a3a3",
     darkGray = "#616161",
-    TransparentdarkGray = "rgba(97, 97, 97, 0.9)",
     blue = "#0ad4fa",
-    TransparentBlue = "rgb(10, 212, 250, 0.9)"
+    transparentDarkGray = "rgba(97, 97, 97, 0.9)",
+    transparentBlue = "rgb(10, 212, 250, 0.9)"
 }
 
 export enum FontSize {

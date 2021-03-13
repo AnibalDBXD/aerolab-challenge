@@ -4,7 +4,7 @@ import UserReducer from "./UserReducer";
 import { GetUser } from "../../api";
 import { IUser } from "../../interfaces";
 import UserActions from "./UserActions";
-import { IUserState } from "../types";
+import { IUserState } from "./types";
 
 interface IProps {
     children: ReactNode;

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { IUserState } from "../types";
+import { IUserState } from "./types";
 
 export const initialState: IUserState = {
     _id: "",

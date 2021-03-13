@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url("/public/assets/fonts/SourceSansPro/SourceSansPro-ExtraLight.ttf") url("/public/assets/fonts/SourceSansPro/SourceSansPro-Light.ttf")
+        url("/public/assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf") url("/public/assets/fonts/SourceSansPro/SourceSansPro-SemiBold.ttf")
+        url("/public/assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf") url("/public/assets/fonts/SourceSansPro/SourceSansPro-Black.ttf");
+}

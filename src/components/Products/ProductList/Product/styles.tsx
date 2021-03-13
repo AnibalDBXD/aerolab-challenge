@@ -12,7 +12,7 @@ export const StyledProductContainer = styled.div`
 `;
 
 export const StyledPicture = styled.picture`
-    border-bottom: 1px solid ${Colors.lightslateGray};
+    border-bottom: 1px solid ${Colors.lightSlateGray};
     display: flex;
     justify-content: center;
     position: relative;

@@ -3,14 +3,9 @@ import { StyledList } from "../styles";
 import { ISorts } from "./types";
 import { useProductContext } from "../../../context/Product/ProductContext";
 import { IProduct } from "../../../interfaces";
+import { Sorts } from "./constants";
 
 const ProductSort: React.FC = (): JSX.Element => {
-    const Sorts: { name: string; type: ISorts; _id: number }[] = [
-        { name: "Most recent", type: "MostRecent", _id: 1 },
-        { name: "Lowest price", type: "LowestPrice", _id: 2 },
-        { name: "Highest price", type: "HighestPrice", _id: 3 }
-    ];
-
     const { SetCurrentSort, SetAllProducts, currentSort, allProducts, defaultProducts } = useProductContext();
 
     const ProductSorter = (Sort: ISorts): IProduct[] => {

@@ -18,6 +18,6 @@ export const StyledNotEnoughMoney = styled.p`
     font-size: ${FontSize.smaller};
     letter-spacing: ${LetterSpacing.short};
 
-    background-color: ${Colors.TransparentdarkGray};
+    background-color: ${Colors.transparentDarkGray};
     border-radius: ${borderRadius};
 `;

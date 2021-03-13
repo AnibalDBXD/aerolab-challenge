@@ -11,7 +11,7 @@ export const StyledBuyScreen = styled.div`
     top: 0;
     bottom: 0;
     z-index: 2;
-    background-color: ${Colors.TransparentBlue};
+    background-color: ${Colors.transparentBlue};
 
     display: flex;
     justify-content: center;

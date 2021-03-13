@@ -1,4 +1,4 @@
-import { IUserActions, IUserState } from "./../types";
+import { IUserActions, IUserState } from "./types";
 import UserActions from "./UserActions";
 
 const UserReducer = (state: IUserState, action: IUserActions): IUserState => {

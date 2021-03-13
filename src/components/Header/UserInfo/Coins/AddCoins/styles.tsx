@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { Colors, Spacing, borderRadius, FontSize } from "../../../../../common/styles";
-import { BuyCoins2, BuyCoins3, BuyCoins4 } from "../../../../Icons";
 
 const centerFlex = `
     margin-left: auto;
@@ -60,18 +59,6 @@ export const StyledButton = styled.button`
     &:active {
         transform: scale(0.9);
     }
-`;
-
-export const StyledBuyCoins2 = styled(BuyCoins2)`
-    ${centerFlex}
-`;
-
-export const StyledBuyCoins3 = styled(BuyCoins3)`
-    ${centerFlex}
-`;
-
-export const StyledBuyCoins4 = styled(BuyCoins4)`
-    ${centerFlex}
 `;
 
 export const StyledCloseButton = styled.button`
