@@ -7,6 +7,10 @@
 
 Rename ``` .env.loca.sample ``` to ```.env.local ``` and modify the variable ``` API_KEY ``` (request)
 
+#  Project LIVE
+
+https://aerolab-challenge-dusky.vercel.app/
+
 # Aerolab-Challenge
 
 - Each product should have a visible price in points.
