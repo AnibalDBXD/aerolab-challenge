@@ -1,41 +1,28 @@
-# TypeScript Next.js example
+# Project initialization
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+1. ``` $ git clone https://github.com/AnibalDBXD/aerolab-challenge.git ```
+2. ``` $ cd aerolab-challenge ```
+4. ``` npm install ```
+5. ``` npm run dev ```
 
-## Deploy your own
+Rename ``` .env.loca.sample ``` to ```.env.local ``` and modify the variable ``` API_KEY ``` (request)
 
-Deploy the example using [Vercel](https://vercel.com):
+# Aerolab-Challenge
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+- Each product should have a visible price in points.
 
-## How to use it?
+- The user should be able to sort products by price, from highest to lowest, and vice-versa.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+- The user should be able to see how many points they have in their account.
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
-```
+- There should be a clear way for the user to distinguish those products that they can redeem from those they cannot.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- A “Redeem” button should be available for those products that the user has enough points to claim.
 
-## Notes
+- A “Redeem now” option should appear when the user interacts with a product that they have enough points to claim.
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+- When the user doesn’t have enough points for a product, they should be able to see how many more points they need to claim it.
 
-```
-npm install --save-dev typescript
-```
+- The user should not be able to redeem a product for which they don’t have enough points.
 
-To enable TypeScript's features, we install the type declarations for React and Node.
-
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
-
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+- When the user clicks on the Redeem now button, the system should automatically deduct the item’s price from the users’ points.
