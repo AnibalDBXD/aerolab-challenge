@@ -6,9 +6,10 @@ import { StyledInfoPages } from "./styles";
 import { useProductContext } from "../../../context/Product/ProductContext";
 import { useEffect, useState } from "react";
 import { PRODUCT_PER_PAGE, INITIAL_PAGE } from "./constants";
+import PagesLoader from "./PagesLoader";
 
 const ProductPages: React.FC<IProductPages> = ({ children, VerticalBar }: IProductPages): JSX.Element => {
-    const { allProducts, SetCurrentProducts, currentSort, history, historyActive } = useProductContext();
+    const { allProducts, SetCurrentProducts, currentSort, history, historyActive, loading } = useProductContext();
 
     const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
     const [CanLeft, setCanLeft] = useState(false);
@@ -43,29 +44,35 @@ const ProductPages: React.FC<IProductPages> = ({ children, VerticalBar }: IProdu
 
     return (
         <StyledInfoPages>
-            {historyActive ? (
-                <>
-                    <Text>{`${history.length} total products`}</Text>
-                    {VerticalBar && <StyledVerticalBar />}
-                    {children}
-                </>
+            {loading ? (
+                <PagesLoader />
             ) : (
                 <>
-                    <Text>{`${indexOfLastProduct} of ${ProductListLenght}`}</Text>
-                    {VerticalBar && <StyledVerticalBar />}
-                    {children}
-                    <StyledButtonContainer>
-                        {CanLeft && (
-                            <StyledButton onClick={(): void => setCurrentPage(currentPage - 1)}>
-                                <ArrowLeft />
-                            </StyledButton>
-                        )}
-                        {CanRight && (
-                            <StyledButton onClick={(): void => setCurrentPage(currentPage + 1)}>
-                                <ArrowRight />
-                            </StyledButton>
-                        )}
-                    </StyledButtonContainer>
+                    {historyActive ? (
+                        <>
+                            <Text>{`${history.length} total products`}</Text>
+                            {VerticalBar && <StyledVerticalBar />}
+                            {children}
+                        </>
+                    ) : (
+                        <>
+                            <Text>{`${indexOfLastProduct} of ${ProductListLenght}`}</Text>
+                            {VerticalBar && <StyledVerticalBar />}
+                            {children}
+                            <StyledButtonContainer>
+                                {CanLeft && (
+                                    <StyledButton onClick={(): void => setCurrentPage(currentPage - 1)}>
+                                        <ArrowLeft />
+                                    </StyledButton>
+                                )}
+                                {CanRight && (
+                                    <StyledButton onClick={(): void => setCurrentPage(currentPage + 1)}>
+                                        <ArrowRight />
+                                    </StyledButton>
+                                )}
+                            </StyledButtonContainer>
+                        </>
+                    )}
                 </>
             )}
         </StyledInfoPages>
