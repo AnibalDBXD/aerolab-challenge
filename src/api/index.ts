@@ -4,7 +4,7 @@ const API_URL = "https://coding-challenge-api.aerolab.co";
 
 const APIURLS = {
     product: { url: "products", method: METHODS.GET },
-    redeemhistory: { url: "products", method: METHODS.GET },
+    redeemhistory: { url: "user/history", method: METHODS.GET },
     user: { url: "user/me", method: METHODS.GET },
     points: { url: "user/points", method: METHODS.POST },
     redeem: { url: "redeem", method: METHODS.POST }

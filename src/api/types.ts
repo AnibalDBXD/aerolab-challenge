@@ -1,4 +1,4 @@
-import { IProduct, IRedeemHistory, IUser } from "../interfaces";
+import { IProduct, IHistoryProducts, IUser } from "../interfaces";
 
 export enum METHODS {
     GET = "GET",
@@ -12,7 +12,7 @@ export interface IURL {
     method: METHODS;
 }
 
-export type IFetchAPI = IProduct[] | IUser | IRedeemHistory | undefined;
+export type IFetchAPI = IProduct[] | IUser | IHistoryProducts[] | undefined;
 
 export interface IBodyParams {
     amount?: AcceptablePoints;

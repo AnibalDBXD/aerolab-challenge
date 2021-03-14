@@ -6,9 +6,9 @@ export interface IProduct {
     _id: string;
 }
 
-export interface IRedeemHistory extends IProduct {
-    createDate: Date;
+export interface IHistoryProducts extends IProduct {
     productId: string;
+    createDate: Date;
 }
 
 export interface IUser {
@@ -16,5 +16,5 @@ export interface IUser {
     name: string;
     points: number;
     createDate: Date;
-    redeemHistory: IRedeemHistory[];
+    redeemHistory: IHistoryProducts[];
 }

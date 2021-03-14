@@ -4,9 +4,10 @@ import { ISorts } from "./types";
 import { useProductContext } from "../../../context/Product/ProductContext";
 import { IProduct } from "../../../interfaces";
 import { Sorts } from "./constants";
+import ShowHistory from "./ShowHistory";
 
 const ProductSort: React.FC = (): JSX.Element => {
-    const { SetCurrentSort, SetAllProducts, currentSort, allProducts, defaultProducts } = useProductContext();
+    const { SetCurrentSort, SetAllProducts, currentSort, allProducts, defaultProducts, historyActive } = useProductContext();
 
     const ProductSorter = (Sort: ISorts): IProduct[] => {
         switch (Sort) {
@@ -29,12 +30,17 @@ const ProductSort: React.FC = (): JSX.Element => {
 
     return (
         <StyledList>
-            <StyledText>Sort by:</StyledText>
-            {Sorts.map(({ name, type, _id }) => (
-                <StyledButton className={`${currentSort === type && "active"}`} key={_id} onClick={(): void => handleClick(type)}>
-                    {name}
-                </StyledButton>
-            ))}
+            {!historyActive && (
+                <>
+                    <StyledText>Sort by:</StyledText>
+                    {Sorts.map(({ name, type, _id }) => (
+                        <StyledButton className={`${currentSort === type && "active"}`} key={_id} onClick={(): void => handleClick(type)}>
+                            {name}
+                        </StyledButton>
+                    ))}
+                </>
+            )}
+            <ShowHistory />
         </StyledList>
     );
 };

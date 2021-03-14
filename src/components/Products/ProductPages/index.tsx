@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { PRODUCT_PER_PAGE, INITIAL_PAGE } from "./constants";
 
 const ProductPages: React.FC<IProductPages> = ({ children, VerticalBar }: IProductPages): JSX.Element => {
-    const { allProducts, SetCurrentProducts, currentSort } = useProductContext();
+    const { allProducts, SetCurrentProducts, currentSort, history, historyActive } = useProductContext();
 
     const [currentPage, setCurrentPage] = useState(INITIAL_PAGE);
     const [CanLeft, setCanLeft] = useState(false);
@@ -43,21 +43,31 @@ const ProductPages: React.FC<IProductPages> = ({ children, VerticalBar }: IProdu
 
     return (
         <StyledInfoPages>
-            <Text>{`${indexOfLastProduct} of ${ProductListLenght}`}</Text>
-            {VerticalBar && <StyledVerticalBar />}
-            {children}
-            <StyledButtonContainer>
-                {CanLeft && (
-                    <StyledButton onClick={(): void => setCurrentPage(currentPage - 1)}>
-                        <ArrowLeft />
-                    </StyledButton>
-                )}
-                {CanRight && (
-                    <StyledButton onClick={(): void => setCurrentPage(currentPage + 1)}>
-                        <ArrowRight />
-                    </StyledButton>
-                )}
-            </StyledButtonContainer>
+            {historyActive ? (
+                <>
+                    <Text>{`${history.length} total products`}</Text>
+                    {VerticalBar && <StyledVerticalBar />}
+                    {children}
+                </>
+            ) : (
+                <>
+                    <Text>{`${indexOfLastProduct} of ${ProductListLenght}`}</Text>
+                    {VerticalBar && <StyledVerticalBar />}
+                    {children}
+                    <StyledButtonContainer>
+                        {CanLeft && (
+                            <StyledButton onClick={(): void => setCurrentPage(currentPage - 1)}>
+                                <ArrowLeft />
+                            </StyledButton>
+                        )}
+                        {CanRight && (
+                            <StyledButton onClick={(): void => setCurrentPage(currentPage + 1)}>
+                                <ArrowRight />
+                            </StyledButton>
+                        )}
+                    </StyledButtonContainer>
+                </>
+            )}
         </StyledInfoPages>
     );
 };

@@ -6,6 +6,7 @@ export enum Colors {
     slateGray = "#a3a3a3",
     darkGray = "#616161",
     blue = "#0ad4fa",
+    orange = "#FF8000",
     transparentDarkGray = "rgba(97, 97, 97, 0.9)",
     transparentBlue = "rgb(10, 212, 250, 0.9)"
 }

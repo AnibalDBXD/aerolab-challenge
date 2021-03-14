@@ -3,7 +3,7 @@ import { GetProductList } from "../../api";
 import { initialState, ProductContext } from "./ProductContext";
 import ProductReducer from "./ProductReducer";
 import ProductActions from "./ProductActions";
-import { IProduct } from "../../interfaces";
+import { IHistoryProducts, IProduct } from "../../interfaces";
 import { ISorts } from "../../components/Products/ProductSort/types";
 
 interface IProps {
@@ -35,7 +35,7 @@ const ProductProvider = ({ children }: IProps): JSX.Element => {
         dispatch({ type: ProductActions.SET_ALL_PRODUCT, payload: newProducts });
     };
 
-    const SetCurrentProducts = (newProducts: IProduct[] = []): void => {
+    const SetCurrentProducts = (newProducts: IProduct[]): void => {
         dispatch({ type: ProductActions.SET_CURRENT_PRODUCTS, payload: newProducts });
     };
 
@@ -43,9 +43,22 @@ const ProductProvider = ({ children }: IProps): JSX.Element => {
         dispatch({ type: ProductActions.SET_CURRENT_SORT, payload: newSort });
     };
 
+    const setHistoryActive = (isActive: boolean): void => {
+        dispatch({ type: ProductActions.SET_HISTORY_ACTIVE, payload: isActive });
+    };
+
+    const setHistory = (newHistoryProducts: IHistoryProducts[]): void => {
+        dispatch({ type: ProductActions.SET_HISTORY, payload: newHistoryProducts });
+    };
+
     return (
         <ProductContext.Provider
             value={{
+                historyActive: state.historyActive,
+                setHistoryActive,
+                history: state.history,
+                setHistory,
+                SetLoading,
                 loading: state.loading,
                 defaultProducts: state.defaultProducts,
                 SetAllProducts,

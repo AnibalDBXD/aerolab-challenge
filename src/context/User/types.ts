@@ -1,4 +1,4 @@
-import { IRedeemHistory } from "../../interfaces";
+import { IHistoryProducts } from "../../interfaces";
 import UserActions from "./UserActions";
 
 export interface IUserState {
@@ -6,7 +6,7 @@ export interface IUserState {
     _id: string;
     name: string;
     points: number;
-    redeemHistory: IRedeemHistory[];
+    redeemHistory: IHistoryProducts[];
     createDate: Date;
     SetPoints?: (newPoints: number) => void;
 }

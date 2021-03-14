@@ -5,7 +5,9 @@ export const initialState: IProductState = {
     allProducts: [],
     currentProducts: [],
     defaultProducts: [],
+    history: [],
     currentSort: "MostRecent",
+    historyActive: false,
     loading: true
 };
 
